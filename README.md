@@ -82,31 +82,37 @@ Python 기반 **행동 로그 시뮬레이터**를 직접 구현하고,
 
 ## 6. 분석 노트북 구성
 
-### 01_basic_eda.ipynb(notebook/01_basic_eda.ipynb)
+### [01_basic_eda.ipynb](notebook/01_basic_eda.ipynb)
 
-- BigQuery 적재 데이터 검증
-- MBTI 분포 및 축(E/I, S/N, T/F, J/P)별 분포
-- 고객 등급, 봇 트래픽, 이탈 현황 EDA
+- BigQuery 적재 데이터 검증  
+- MBTI 분포 및 축(E/I, S/N, T/F, J/P)별 분포  
+- 고객 등급, 봇 트래픽, 이탈 현황 EDA  
 
-### 02_funnel_analysis.ipynb(notebook/02_funnel_analysis.ipynb)
+---
 
-- 전체 퍼널 전환율 분석
-- MBTI별 퍼널 전환율 비교
-- J/P 축별 결제 이탈률 분석
-- T/F 축별 캠페인 반응 차이 분석
+### [02_funnel_analysis.ipynb](notebook/02_funnel_analysis.ipynb)
 
-### 03_mbti_segments.ipynb(notebook/03_mbti_segments.ipynb)
+- 전체 퍼널 전환율 분석  
+- MBTI별 퍼널 전환율 비교  
+- J/P 축별 결제 이탈률 분석  
+- T/F 축별 캠페인 반응 차이 분석  
 
-- MBTI별 세션 행동 특성
-- 시간대별 접속 패턴 (E/I 비교)
-- MBTI별 이탈률 및 매출 기여도
-- 심리 기반 고객 세그먼트 도출
+---
 
-### 04_ml_prediction.ipynb(notebook/04_ml_prediction.ipynb) (진행 중)
+### [03_mbti_segments.ipynb](notebook/03_mbti_segments.ipynb)
 
-- 고객 이탈(churn) 예측 모델링
-- 행동 데이터만 사용한 모델 vs MBTI 포함 모델 성능 비교
-- Feature 중요도 분석
+- MBTI별 세션 행동 특성  
+- 시간대별 접속 패턴 (E/I 비교)  
+- MBTI별 이탈률 및 매출 기여도  
+- 심리 기반 고객 세그먼트 도출  
+
+---
+
+### [04_ml_prediction.ipynb](notebook/04_ml_prediction.ipynb) *(진행 중)*
+
+- 고객 이탈(churn) 예측 모델링  
+- 행동 데이터만 사용한 모델 vs MBTI 포함 모델 성능 비교  
+- Feature 중요도 분석  
 
 ---
 
