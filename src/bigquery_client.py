@@ -18,5 +18,3 @@ if __name__ == "__main__":
         print("연결 성공! 데이터셋 목록:")
         for ds in datasets:
             print(" -", ds.dataset_id)
-    else:
-        print("연결은 됐는데 데이터셋이 없습니다.")
