@@ -186,6 +186,7 @@ mbti-ecommerce-analysis/
 ├── requirements.txt
 ├── README.md
 └── .gitignore
+```
 
 ---
 
@@ -194,5 +195,3 @@ mbti-ecommerce-analysis/
 junhyung_ing (신준형)
 
 ---
-
-```
