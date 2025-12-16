@@ -76,7 +76,7 @@ Python 기반 **행동 로그 시뮬레이터**를 직접 구현하고,
 | order_items | 약 78만 건  |
 | products    | 600개       |
 
-- 분석 기간: **2024-01-01 ~ 2024-06-30 (6개월)**
+- 분석 기간: **2025-01-01 ~ 2025-06-30 (6개월)**
 
 ---
 
@@ -84,35 +84,38 @@ Python 기반 **행동 로그 시뮬레이터**를 직접 구현하고,
 
 ### [01_basic_eda.ipynb](notebook/01_basic_eda.ipynb)
 
-- BigQuery 적재 데이터 검증  
-- MBTI 분포 및 축(E/I, S/N, T/F, J/P)별 분포  
-- 고객 등급, 봇 트래픽, 이탈 현황 EDA  
+- BigQuery 적재 데이터 검증
+- MBTI 분포 및 축(E/I, S/N, T/F, J/P)별 분포
+- 고객 등급, 봇 트래픽, 이탈 현황 EDA
 
 ---
 
 ### [02_funnel_analysis.ipynb](notebook/02_funnel_analysis.ipynb)
 
-- 전체 퍼널 전환율 분석  
-- MBTI별 퍼널 전환율 비교  
-- J/P 축별 결제 이탈률 분석  
-- T/F 축별 캠페인 반응 차이 분석  
+- 전체 퍼널 전환율 분석
+- MBTI별 퍼널 전환율 비교
+- J/P 축별 결제 이탈률 분석
+- T/F 축별 캠페인 반응 차이 분석
 
 ---
 
 ### [03_mbti_segments.ipynb](notebook/03_mbti_segments.ipynb)
 
-- MBTI별 세션 행동 특성  
-- 시간대별 접속 패턴 (E/I 비교)  
-- MBTI별 이탈률 및 매출 기여도  
-- 심리 기반 고객 세그먼트 도출  
+- MBTI별 세션 행동 특성
+- 시간대별 접속 패턴 (E/I 비교)
+- MBTI별 이탈률 및 매출 기여도
+- 심리 기반 고객 세그먼트 도출
 
 ---
 
-### [04_ml_prediction.ipynb](notebook/04_ml_prediction.ipynb) *(진행 중)*
+### [04_ml_prediction.ipynb](notebook/04_ml_prediction.ipynb)
 
-- 고객 이탈(churn) 예측 모델링  
-- 행동 데이터만 사용한 모델 vs MBTI 포함 모델 성능 비교  
-- Feature 중요도 분석  
+- 고객 이탈(churn) 예측 모델링
+- **Data Leakage 문제 발견 및 해결**
+- 첫 30일 행동 데이터로 재분석
+- 행동 데이터만 vs MBTI 포함 모델 성능 비교
+- **MBTI 추가 시 F1 4.9% 개선 확인**
+- Feature Importance 분석 (S/N 축 가장 중요)
 
 ---
 
@@ -143,18 +146,18 @@ Python 기반 **행동 로그 시뮬레이터**를 직접 구현하고,
 
 ---
 
-## 8. 가설 예시
+## 9. 가설 vs 실제 결과
 
-| MBTI        | 행동 가설                    |
-| ----------- | ---------------------------- |
-| ENFP / ESFP | 장바구니 담기 ↑, 구매 지연 ↑ |
-| ISTJ / INTJ | 신중한 구매, 전환율 ↑        |
-| INFP        | 장바구니 보관 기간 ↑         |
-| ENTJ        | 빠른 의사결정, 구매 속도 ↑   |
+| MBTI        | 가설                  | 실제 결과                 |
+| ----------- | --------------------- | ------------------------- |
+| ENFP / ESFP | 장바구니 ↑, 구매 지연 | (cart 많고 이탈 높음)     |
+| ISTJ / INTJ | 신중한 구매, 전환율 ↑ | 전환율 낮지만 이탈도 낮음 |
+| ESTP        | 즉흥 구매             | (전환율 65% 최고)         |
+| ENTJ        | 빠른 의사결정         | (이탈률 6% 최저)          |
 
 ---
 
-## 9. Synthetic Data 설계 원칙
+## 9. Data 설계 원칙
 
 본 프로젝트의 데이터는 **분석 목적의 시뮬레이션 데이터**입니다.
 
@@ -166,17 +169,20 @@ Python 기반 **행동 로그 시뮬레이터**를 직접 구현하고,
 
 ## 10. 프로젝트 구조
 
+```text
 mbti-ecommerce-analysis/
 │
 ├── data/
 ├── src/
-│ ├── bigquery_client.py
-│ ├── utils.py
+│   ├── bigquery_client.py
+│   ├── utils.py
+│
 ├── notebook/
-│ ├── 01_basic_eda.ipynb
-│ ├── 02_funnel_analysis.ipynb
-│ ├── 03_mbti_segments.ipynb
-│ └── 04_ml_prediction.ipynb
+│   ├── 01_basic_eda.ipynb
+│   ├── 02_funnel_analysis.ipynb
+│   ├── 03_mbti_segments.ipynb
+│   └── 04_ml_prediction.ipynb
+│
 ├── requirements.txt
 ├── README.md
 └── .gitignore
@@ -189,6 +195,4 @@ junhyung_ing (신준형)
 
 ---
 
-## Project Status
-
-Active (진행 중)
+```
